@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -29,9 +30,42 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding{
+        enabled true
+    }
 }
 
 dependencies {
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+
+    // Logging interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.loggingVersion"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+
+    // Fragment
+    implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentKtxVersion"
+
+    // Recycler view
+    implementation "androidx.recyclerview:recyclerview:$rootProject.rvVersion"
+
+    // Swipe Refresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.swipeRefresh"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
