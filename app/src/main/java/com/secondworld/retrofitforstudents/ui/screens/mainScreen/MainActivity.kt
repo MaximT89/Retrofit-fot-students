@@ -57,7 +57,6 @@ class MainActivity : AppCompatActivity() {
                     updateUi(it.data as ResponseCats)
                 }
             }
-
         }
     }
 
@@ -71,7 +70,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSnackBar(message: String) {
         Snackbar.make(this, findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG ).show()
-
     }
 
     private fun hideContent() {
@@ -84,11 +82,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateUi(catInfo: ResponseCats) {
         Glide.with(this)
-            .load("https://cataas.com/${catInfo?.url}")
+            .load("https://cataas.com/${catInfo.url}")
             .into(binding.imageCat)
 
-        binding.textCatId.text = "Id car: ${catInfo?.id ?: "нет id"}"
-        binding.textDate.text = "Id car: ${catInfo?.createdAt ?: "нет даты"}"
+        binding.textCatId.text = "Id car: ${catInfo.id ?: "нет id"}"
+        binding.textDate.text = "Id car: ${catInfo.createdAt ?: "нет даты"}"
     }
 
     private fun swipeRefresh() {

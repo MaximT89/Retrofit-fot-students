@@ -46,6 +46,7 @@
                 android:id="@+id/image_cat"
                 android:layout_width="wrap_content"
                 android:layout_height="300dp"
+                tools:src="@drawable/cats"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
