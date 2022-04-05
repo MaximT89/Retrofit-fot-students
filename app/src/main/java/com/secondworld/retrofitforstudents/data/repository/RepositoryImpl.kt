@@ -1,6 +1,5 @@
 package com.secondworld.retrofitforstudents.data.repository
 
-import com.secondworld.retrofitforstudents.data.api.ApiClient
 import com.secondworld.retrofitforstudents.data.api.ApiService
 import com.secondworld.retrofitforstudents.data.models.ResponseCats
 import com.secondworld.retrofitforstudents.domain.repository.Repository
