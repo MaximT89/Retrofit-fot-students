@@ -13,6 +13,16 @@
         android:layout_height="match_parent"
         tools:context=".ui.screens.mainScreen.MainActivity">
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/text_cat_id"
             android:layout_width="wrap_content"
@@ -21,17 +31,15 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintVertical_bias="0.076"
             tools:text="id s3411234123412341234" />
 
         <ImageView
             android:id="@+id/image_cat"
             android:layout_width="wrap_content"
             android:layout_height="300dp"
-            android:src="@drawable/cats"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +55,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.768"
+            app:layout_constraintVertical_bias="0.867"
             tools:text="id s3411234123412341234" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
