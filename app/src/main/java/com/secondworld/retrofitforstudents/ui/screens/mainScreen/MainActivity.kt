@@ -7,6 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.secondworld.retrofitforstudents.app.App
 import com.secondworld.retrofitforstudents.core.ApiState
 import com.secondworld.retrofitforstudents.data.models.ResponseCats
 import com.secondworld.retrofitforstudents.data.repository.RepositoryImpl
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val repository = RepositoryImpl()
     private val viewModel : MainViewModel by viewModels{
-        ViewModelFactory(CatUseCase(repository))
+        ViewModelFactory(CatUseCase(repository), applicationContext)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
                     hideProgressBar()
                     showContent()
                     updateUi(it.data as ResponseCats)
+                }
+                is ApiState.NoInternet -> {
+                    hideProgressBar()
+                    showSnackBar(it.message)
                 }
             }
         }
@@ -92,7 +97,7 @@ class MainActivity : AppCompatActivity() {
     private fun swipeRefresh() {
         binding.swipeRefreshContainer.setOnRefreshListener {
             viewModel.apply {
-                viewModel.catInfo(true)
+                viewModel.catInfo(true, this@MainActivity)
                 binding.swipeRefreshContainer.isRefreshing = false
             }
         }
